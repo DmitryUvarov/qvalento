@@ -7,3 +7,30 @@
 // }
 
 //========================================================================================================================================================
+
+.title {
+  font-family: "Work Sans";
+  font-weight: 700;
+  @include adaptiveValue("font-size", 36, 22);
+  text-transform: uppercase;
+  color: $primaryText;
+  &_white {
+    color: #fff;
+  }
+}
+
+.text {
+  font-family: "Roboto";
+  font-weight: 400;
+  @include adaptiveValue("font-size", 22, 15);
+  line-height: 145%;
+  color: $secondaryText;
+
+  @media (max-width: $mobile) {
+    line-height: 160%;
+  }
+
+  &_white {
+    color: #fff;
+  }
+}
