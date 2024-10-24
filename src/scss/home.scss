@@ -1,3 +1,144 @@
 //====================================================================================================
 
+.hero {
+  &__container {
+    display: flex;
+    gap: toRem(20);
+
+    @include adaptiveValue("padding-top", 55, 45);
+
+    @media (min-width: $mobile) {
+      padding-bottom: toRem(230);
+      justify-content: space-between;
+    }
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      gap: toRem(40);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    max-width: toRem(790);
+
+    @media (min-width: $mobile) {
+      @include adaptiveValue("padding-top", 145, 40, 0, 1476, 991);
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    @include adaptiveValue("font-size", 60, 28);
+    text-transform: uppercase;
+    color: $primaryText;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 22, 16);
+    }
+
+    span {
+      color: $primaryGreen;
+    }
+  }
+
+  &__text {
+    font-family: "Roboto";
+    font-weight: 400;
+    @include adaptiveValue("font-size", 24, 15);
+    line-height: 150%;
+    color: $secondaryText;
+
+    max-width: toRem(665);
+    &:not(:last-child) {
+      margin-bottom: toRem(45);
+    }
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: toRem(10);
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: toRem(10);
+
+    @media (max-width: $mobile) {
+      order: 4;
+      margin-top: toRem(20);
+    }
+
+    @media (min-width: $mobile) {
+      &:not(:last-child) {
+        margin-bottom: toRem(110);
+      }
+    }
+  }
+
+  &__button {
+    @media (min-width: $mobile) {
+      min-width: toRem(425);
+    }
+    @media (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+
+  &__numbers {
+  }
+
+  &__image {
+    @media (min-width: $mobile) {
+      flex: 0 0 percent(543, 1440);
+    }
+    @media (max-width: $mobile) {
+      max-width: percent(208, 284);
+      margin-bottom: toRem(-60);
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.numbers {
+  display: flex;
+  flex-wrap: wrap;
+  @include adaptiveValue("gap", 76, 50);
+  &__item {
+    position: relative;
+    &:not(:last-child) {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: calc(100% - toRem(10));
+        top: toRem(10);
+        @include adaptiveValue("right", -38, -25);
+        background-color: #b7b7b7;
+      }
+    }
+  }
+
+  &__num {
+    font-family: "Inter";
+    font-weight: 700;
+    @include adaptiveValue("font-size", 50, 29);
+    text-transform: uppercase;
+    color: $primaryGreen;
+    margin-bottom: em(5, 50);
+  }
+
+  &__text {
+    font-weight: 400;
+    @include adaptiveValue("font-size", 14, 12);
+    text-transform: capitalize;
+    color: #595959;
+  }
+}
+
 //====================================================================================================

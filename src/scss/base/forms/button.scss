@@ -5,11 +5,53 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  @include adaptiveValue("gap", 10, 6);
+
+  padding: toRem(10) toRem(50);
+  font-weight: 700;
+  @include adaptiveValue("font-size", 22, 16);
+
+  color: #fff;
+  border: 2px solid #366a47;
+  background-color: #366a47;
+  border-radius: toRem(2);
+
+  @include adaptiveValue("min-height", 78, 51);
+
+  &::after {
+    content: "\e901";
+    @extend %ic;
+    @include adaptiveValue("font-size", 26, 20);
+  }
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: #fff;
+      color: #366a47;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    border-radius: toRem(4);
+  }
+
+  &--fw {
+    width: 100%;
+  }
+}
+
+.button-line {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   padding: toRem(15) toRem(50);
   font-weight: 700;
   @include adaptiveValue("font-size", 18, 16);
-  color: #366a47;
 
+  color: #366a47;
   border: 2px solid #366a47;
   border-radius: 2px;
 
@@ -22,6 +64,10 @@
       background-color: #366a47;
       color: #fff;
     }
+  }
+
+  @media (max-width: $mobile) {
+    border-radius: toRem(4);
   }
   &--fw {
     width: 100%;
