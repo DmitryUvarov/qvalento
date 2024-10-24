@@ -40,5 +40,8 @@ function pageLoad() {
   document.querySelectorAll(".item-services").forEach(item => {
     item.addEventListener("mouseenter", () => changeSVGFillToWhite(item))
     item.addEventListener("mouseleave", () => restoreOriginalFill(item))
+
+    item.addEventListener("touchstart", () => changeSVGFillToWhite(item))
+    item.addEventListener("touchend", () => restoreOriginalFill(item))
   })
 }
