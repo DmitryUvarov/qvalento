@@ -226,3 +226,138 @@
     }
   }
 }
+
+//========================================================================================================================================================
+
+.services {
+  @include adaptiveValue("padding-top", 220, 60);
+  @include adaptiveValue("padding-bottom", 110, 30);
+  &__container {
+    display: grid;
+  }
+
+  &__title {
+    justify-self: center;
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 80, 50);
+    }
+  }
+
+  &__items {
+    display: grid;
+    @include adaptiveValue("gap", 30, 20);
+
+    @media (min-width: $mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: $tablet) {
+      grid-template-columns: repeat(auto-fill, minmax(toRem(370), 1fr));
+    }
+  }
+
+  &__item {
+  }
+}
+
+.item-services {
+  position: relative;
+  background-color: #f3f3f3;
+  border-radius: 4px;
+
+  @include adaptiveValue("padding-right", 50, 22, 0, 1476, 991);
+  @include adaptiveValue("padding-left", 50, 22, 0, 1476, 991);
+  @include adaptiveValue("padding-top", 65, 26);
+  @include adaptiveValue("padding-bottom", 85, 60);
+
+  @media (min-width: $pc) {
+    min-height: toRem(510);
+  }
+
+  transition:
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+  &:hover {
+    box-shadow: 0 9px 30px 0 rgba(0, 0, 0, 0.3);
+    background-color: $link;
+
+    .item-services__title,
+    .item-services__text {
+      color: #fff;
+    }
+
+    .item-services__link {
+      opacity: 1;
+    }
+  }
+
+  &__ico {
+    @include adaptiveValue("max-width", 82, 51);
+
+    svg,
+    img {
+      max-width: 100%;
+    }
+
+    svg path {
+      transition: all 0.3s ease 0s;
+    }
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 38, 28);
+    }
+  }
+
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 16, 12);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__text {
+    p {
+      &:not(:last-child) {
+        margin-bottom: toRem(10);
+      }
+    }
+  }
+
+  &__link {
+    position: absolute;
+    @include adaptiveValue("bottom", 25, 20);
+    @include adaptiveValue("right", 25, 15);
+    @include adaptiveValue("font-size", 51, 24);
+    color: #fff;
+
+    @media (min-width: $mobile) {
+      opacity: 0;
+    }
+    @media (max-width: $mobile) {
+      color: $primaryGreen;
+      transform: rotate(-45deg);
+    }
+
+    transition:
+      color 0.3s ease,
+      opacity 0.3s ease;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $primaryGreen;
+      }
+    }
+  }
+}
+
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
+//========================================================================================================================================================
